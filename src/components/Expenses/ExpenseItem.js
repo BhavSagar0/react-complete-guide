@@ -5,7 +5,6 @@ import Card from "../UI/Card";
 
 function ExpenseItem(props) {
   const [title, setTitle] = useState(props.title);
-  console.log("props.title : " + props.title);
 
   const clickHandler = () => {
     setTitle("Updated!!!" + Math.floor(Math.random() * 11));
