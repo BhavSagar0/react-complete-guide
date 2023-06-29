@@ -4,17 +4,16 @@ import ExpenseFilter from "./ExpenseFilter";
 import { useState } from "react";
 
 function Expenses(props) {
-  const [year,setYear] = useState('');
+  const [year,setYear] = useState('2020');
 
-  const onYearChange = async (yearValue) => {
-    await setYear(yearValue);
-    console.log(year);
+  const onYearChange = (yearValue) => {
+    console.log(yearValue);
+    setYear(yearValue);
   }
-
   return (
     <Card className="expenses">
       <div>
-        <ExpenseFilter onYearChange={onYearChange} />
+        <ExpenseFilter selectedYear={year} onYearChange={onYearChange} />
       </div>
       <ExpenseItem
         title={props.expenses[0].title}
