@@ -10,7 +10,8 @@ function ExpenseItem(props) {
     setTitle("Updated!!!" + Math.floor(Math.random() * 11));
   }
   return (
-    <Card className="expense-item">
+    <li>
+      <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
@@ -18,6 +19,7 @@ function ExpenseItem(props) {
         <button onClick={clickHandler}>Change Title</button>
       </div>
     </Card>
+    </li>
   );
 }
 
